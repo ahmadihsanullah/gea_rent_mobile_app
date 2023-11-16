@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="73dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
