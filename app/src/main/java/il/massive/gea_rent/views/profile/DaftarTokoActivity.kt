@@ -1,4 +1,4 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.profile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import il.massive.gea_rent.R
+import il.massive.gea_rent.views.MainActivity
 
 class DaftarTokoActivity : AppCompatActivity(), View.OnClickListener   {
     override fun onCreate(savedInstanceState: Bundle?) {

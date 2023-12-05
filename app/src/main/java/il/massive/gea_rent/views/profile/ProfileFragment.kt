@@ -1,4 +1,4 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import il.massive.gea_rent.R
 import il.massive.gea_rent.databinding.FragmentProfileBinding
+import il.massive.gea_rent.views.toko_saya.TokoSayaActivity
 
 class ProfileFragment : Fragment() {
 

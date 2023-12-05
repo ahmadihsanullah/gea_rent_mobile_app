@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/seed"
-    tools:context=".ui.TokoSayaActivity">
+    tools:context=".views.toko_saya.TokoSayaActivity">
 
     <LinearLayout
         android:id="@+id/menuTokoSaya"

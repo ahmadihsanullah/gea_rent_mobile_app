@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import il.massive.gea_rent.databinding.TokoItemBinding
-import il.massive.gea_rent.ui.ProdukSewaActivity
+import il.massive.gea_rent.views.toko_saya.ProdukSewaActivity
 import il.massive.gea_rent.model.TokoSayaModel
 
 class TokoSayaAdapter(private val list: List<TokoSayaModel>, private val context:Context) :

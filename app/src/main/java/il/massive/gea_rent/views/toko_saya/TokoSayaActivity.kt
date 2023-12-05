@@ -1,4 +1,4 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.toko_saya
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import il.massive.gea_rent.R
 import il.massive.gea_rent.databinding.ActivityTokoSayaBinding
 import il.massive.gea_rent.adapter.TokoSayaAdapter
 import il.massive.gea_rent.model.TokoSayaModel
+import il.massive.gea_rent.views.MainActivity
 
 class TokoSayaActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var adapter: TokoSayaAdapter

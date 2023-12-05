@@ -1,12 +1,11 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.beranda
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import il.massive.gea_rent.adapter.BarangAdapter
 import il.massive.gea_rent.adapter.TokoAdapter
@@ -15,6 +14,8 @@ import il.massive.gea_rent.data.toko.DataToko
 import il.massive.gea_rent.databinding.FragmentBerandaBinding
 import il.massive.gea_rent.model.BarangModel
 import il.massive.gea_rent.model.TokoModel
+import il.massive.gea_rent.views.toko_saya.DetailBarangActivity
+import il.massive.gea_rent.views.toko_saya.DetailTokoActivity
 
 
 class BerandaFragment : Fragment() {
@@ -52,7 +53,7 @@ class BerandaFragment : Fragment() {
 
         TokoAdapter(items, object : TokoAdapter.onAdapterListener{
             override fun onClick(result: TokoModel) {
-                val intent = Intent(requireContext(),DetailTokoActivity::class.java)
+                val intent = Intent(requireContext(), DetailTokoActivity::class.java)
                 intent.putExtra("gambar_toko", result.image)
                 intent.putExtra("nama_toko", result.nama)
                 intent.putExtra("alamat_toko", result.alamat)

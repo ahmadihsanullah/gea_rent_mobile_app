@@ -1,12 +1,10 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.autentikasi
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import il.massive.gea_rent.R
 import il.massive.gea_rent.databinding.ActivityLoginBinding
-import il.massive.gea_rent.databinding.ActivityOnBoardingBinding
+import il.massive.gea_rent.views.MainActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding

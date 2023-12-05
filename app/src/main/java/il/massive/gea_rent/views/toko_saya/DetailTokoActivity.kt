@@ -1,19 +1,13 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.toko_saya
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
-import il.massive.gea_rent.R
 import il.massive.gea_rent.adapter.LayananAdapter
 import il.massive.gea_rent.data.barang.DataBarang
 import il.massive.gea_rent.databinding.ActivityDetailTokoBinding
-import il.massive.gea_rent.databinding.ActivityTokoTerdekatBinding
 import il.massive.gea_rent.model.BarangModel
 
 class DetailTokoActivity : AppCompatActivity() {

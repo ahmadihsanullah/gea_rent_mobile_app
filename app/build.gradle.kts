@@ -16,6 +16,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:36068/api/\"")
     }
 
     buildTypes {
@@ -37,12 +39,15 @@ android {
         viewBinding {
             enable = true
         }
-    buildFeatures {
-        viewBinding = true
+        buildFeatures {
+            viewBinding = true
+            buildConfig = true
     }
 
 
     dependencies {
+        implementation("androidx.fragment:fragment-ktx:1.4.0")
+        implementation("androidx.activity:activity-ktx:1.3.1")
 
         implementation("androidx.core:core-ktx:1.9.0")
         implementation("androidx.appcompat:appcompat:1.6.1")
@@ -64,6 +69,13 @@ android {
 
         //circle image
         implementation("de.hdodenhof:circleimageview:3.1.0")
+
+        // lifecycle
+        implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
+        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+
+
     }
 }
 dependencies {

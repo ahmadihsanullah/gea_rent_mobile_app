@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.SplashScreenActivity">
+    tools:context=".views.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/iv_splash_screen"

@@ -1,4 +1,4 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.toko_saya
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

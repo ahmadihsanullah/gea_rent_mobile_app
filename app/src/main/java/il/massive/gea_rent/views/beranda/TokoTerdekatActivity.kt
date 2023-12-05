@@ -1,18 +1,14 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views.beranda
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import il.massive.gea_rent.R
-import il.massive.gea_rent.adapter.TokoAdapter
 import il.massive.gea_rent.adapter.TokoTerdekatAdapter
 import il.massive.gea_rent.data.toko.DataToko
 import il.massive.gea_rent.databinding.ActivityTokoTerdekatBinding
-import il.massive.gea_rent.databinding.TokoTerdekatBinding
 import il.massive.gea_rent.model.TokoModel
+import il.massive.gea_rent.views.toko_saya.DetailTokoActivity
 
 class TokoTerdekatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTokoTerdekatBinding

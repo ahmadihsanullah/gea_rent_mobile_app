@@ -1,4 +1,4 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

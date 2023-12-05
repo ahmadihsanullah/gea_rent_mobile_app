@@ -1,4 +1,4 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import il.massive.gea_rent.R
 import il.massive.gea_rent.databinding.ActivityMainBinding
+import il.massive.gea_rent.views.beranda.BerandaFragment
+import il.massive.gea_rent.views.panduan.PanduanFragment
+import il.massive.gea_rent.views.profile.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

@@ -1,12 +1,11 @@
-package il.massive.gea_rent.ui
+package il.massive.gea_rent.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import il.massive.gea_rent.R
 import il.massive.gea_rent.databinding.ActivityOnBoardingBinding
+import il.massive.gea_rent.views.autentikasi.LoginActivity
+import il.massive.gea_rent.views.autentikasi.RegisterActivity
 
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnBoardingBinding

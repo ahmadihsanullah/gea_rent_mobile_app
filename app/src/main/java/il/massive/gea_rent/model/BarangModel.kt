@@ -7,4 +7,5 @@ data class BarangModel(
     val harga: Int,
     val stok: Int,
     val gambar: Int
+
 )
