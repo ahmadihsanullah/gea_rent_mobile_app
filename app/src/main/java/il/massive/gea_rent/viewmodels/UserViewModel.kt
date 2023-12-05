@@ -6,19 +6,20 @@ import androidx.lifecycle.liveData
 import il.massive.gea_rent.api.RequestState
 import il.massive.gea_rent.model.UserResponse
 import il.massive.gea_rent.repository.UserRepository
+import okhttp3.RequestBody
 import retrofit2.HttpException
 
 //proses request disini
 class UserViewModel: ViewModel() {
     private val repo : UserRepository = UserRepository()
 
-    fun userRegister(username: String,name:String, password:String): LiveData<RequestState<UserResponse>> = liveData{
+    fun userRegister(requestBody: RequestBody): LiveData<RequestState<UserResponse>> = liveData{
         try {
-            val response = repo.userRegister(username, name, password)
             emit(RequestState.loading)
+            val response = repo.userRegister(requestBody)
             emit(RequestState.success(response))
         }catch (e: HttpException){
-            emit(RequestState.error(e.response()?.errorBody().toString()))
+            emit(RequestState.error("Failed to register user: ${e.response()?.errorBody()?.string()}", ))
         }
 
     }

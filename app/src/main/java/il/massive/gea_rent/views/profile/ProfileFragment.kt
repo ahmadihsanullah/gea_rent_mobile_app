@@ -2,12 +2,10 @@ package il.massive.gea_rent.views.profile
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import il.massive.gea_rent.R
+import androidx.fragment.app.Fragment
 import il.massive.gea_rent.databinding.FragmentProfileBinding
 import il.massive.gea_rent.views.toko_saya.TokoSayaActivity
 
@@ -21,29 +19,25 @@ class ProfileFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val view = binding.root
-
-        // Find the button by ID
-        val btnbukatoko: ImageButton = view.findViewById(R.id.bukatoko)
-        val btntokosaya: ImageButton = view.findViewById(R.id.tokosaya)
-        val btndetailprofil: ImageButton = view.findViewById(R.id.detail_profile)
-
-        // Set an OnClickListener for the button
-        btnbukatoko.setOnClickListener {
-            val intent = Intent(activity, DaftarTokoActivity::class.java)
-            startActivity(intent)
-        }
-
-        btntokosaya.setOnClickListener {
-            val intent = Intent(activity, TokoSayaActivity::class.java)
-            startActivity(intent)
-        }
-
-        btndetailprofil.setOnClickListener {
-            val intent = Intent(activity, DetailProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        return view
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.bukatoko.setOnClickListener {
+            val intent = Intent(requireContext(), DaftarTokoActivity::class.java)
+            startActivity(intent)
+        }
+        binding.tokosaya.setOnClickListener {
+            val intent = Intent(requireContext(), TokoSayaActivity::class.java)
+            startActivity(intent)
+        }
+        binding.detailProfile.setOnClickListener {
+            val intent = Intent(requireContext(), DetailProfileActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+
+
 }
