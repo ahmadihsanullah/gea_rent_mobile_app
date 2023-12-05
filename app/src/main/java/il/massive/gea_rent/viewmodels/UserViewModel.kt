@@ -13,9 +13,9 @@ class UserViewModel: ViewModel() {
     private val repo : UserRepository = UserRepository()
 
     fun userRegister(username: String,name:String, password:String): LiveData<RequestState<UserResponse>> = liveData{
-        emit(RequestState.loading)
         try {
             val response = repo.userRegister(username, name, password)
+            emit(RequestState.loading)
             emit(RequestState.success(response))
         }catch (e: HttpException){
             emit(RequestState.error(e.response()?.errorBody().toString()))
