@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.profile.DetailProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/detailProfile"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:contentDescription="Kembali ke halaman sebelumnya"
+            android:id="@+id/btnBackprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_back"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/teks_detailProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Detail Profile"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/fotoprofil"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/detailProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="Kembali ke halaman sebelumnya"
+        android:src="@drawable/edit_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/text_namaProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Nama"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile" />
+
+    <EditText
+        android:id="@+id/editnamaProfile"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Nama Lengkap"
+        android:padding="12dp"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/text_namaProfile"
+        app:layout_constraintTop_toBottomOf="@+id/text_namaProfile" />
+
+    <TextView
+        android:id="@+id/text_emailProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Email"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editnamaProfile" />
+
+    <EditText
+        android:id="@+id/editemailProfile"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_edittext"
+        android:hint="Email"
+        android:padding="12dp"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/text_emailProfile"
+        app:layout_constraintTop_toBottomOf="@+id/text_emailProfile" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSimpanProfile"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="Simpan"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_inline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editemailProfile" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
