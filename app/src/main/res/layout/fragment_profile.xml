@@ -8,8 +8,6 @@
         android:background="@color/seed"
         tools:context=".views.profile.ProfileFragment">
 
-
-
     <TextView
             android:id="@+id/txt_profile"
             android:layout_width="wrap_content"
