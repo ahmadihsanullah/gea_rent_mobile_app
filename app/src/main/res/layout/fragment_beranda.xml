@@ -40,6 +40,7 @@
             android:src="@drawable/profile_image"/>
 
         <TextView
+            android:id="@+id/sapaan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sapaan"
@@ -54,7 +55,7 @@
         android:id="@+id/tv_deskripsi_onboarding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mau sewa alat Outdoor ?"
+        android:text="@string/mau_sewa_alat_outdoor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ly_beranda_1"
         android:layout_marginStart="16dp"
@@ -77,7 +78,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Terdekat"
+        android:text="@string/terdekat"
         android:fontFamily="@font/mulishbold"
         android:textSize="12sp"
         android:paddingStart="16dp"
@@ -96,15 +97,16 @@
         app:layout_constraintTop_toBottomOf="@id/bg_beranda"
         android:layout_marginTop="20dp"
         android:paddingEnd="16dp">
+
         <TextView
             android:id="@+id/tv_terdekat_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
             android:fontFamily="@font/poppinsregular"
-            android:text="Lihat Semua"
-            android:textSize="12sp"
+            android:text="@string/lihat_semua"
             android:textColor="@color/md_theme_light_secondary"
-            android:layout_marginEnd="10dp"/>
+            android:textSize="12sp" />
 
         <ImageButton
             android:id="@+id/btn_terdekat_lihat_semua_link"
@@ -134,7 +136,7 @@
         android:id="@+id/tv_barang_terlengkap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Barang Terlengkap"
+        android:text="@string/barang_terlengkap"
         android:fontFamily="@font/mulishbold"
         android:textSize="12sp"
         android:paddingStart="16dp"
@@ -157,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsregular"
-            android:text="Lihat Semua"
+            android:text="@string/lihat_semua"
             android:textSize="12sp"
             android:textColor="@color/md_theme_light_secondary"
             android:layout_marginEnd="10dp"/>

@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import il.massive.gea_rent.api.RequestState
+import il.massive.gea_rent.model.GetCurrentUserResponse
+import il.massive.gea_rent.model.UserLoginResponse
 import il.massive.gea_rent.model.UserResponse
 import il.massive.gea_rent.repository.UserRepository
 import okhttp3.RequestBody
@@ -21,6 +23,25 @@ class UserViewModel: ViewModel() {
         }catch (e: HttpException){
             emit(RequestState.error("Failed to register user: ${e.response()?.errorBody()?.string()}", ))
         }
+    }
 
+    fun userLogin(requestBody: RequestBody): LiveData<RequestState<UserLoginResponse>> = liveData{
+        try {
+            emit(RequestState.loading)
+            val response = repo.userLogin(requestBody)
+            emit(RequestState.success(response))
+        }catch (e: HttpException){
+            emit(RequestState.error("Failed to login user: ${e.response()?.errorBody()?.string()}", ))
+        }
+    }
+
+    fun getCurrentUser(authorization:String): LiveData<RequestState<GetCurrentUserResponse>> = liveData{
+        try {
+            emit(RequestState.loading)
+            val response = repo.getUserCurrent(authorization)
+            emit(RequestState.success(response))
+        }catch (e: HttpException){
+            emit(RequestState.error("Failed to login user: ${e.response()?.errorBody()?.string()}", ))
+        }
     }
 }

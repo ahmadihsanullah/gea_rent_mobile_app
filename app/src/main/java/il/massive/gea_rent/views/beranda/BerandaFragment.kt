@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import il.massive.gea_rent.R
 import il.massive.gea_rent.adapter.BarangAdapter
 import il.massive.gea_rent.adapter.TokoAdapter
 import il.massive.gea_rent.data.barang.DataBarang
@@ -14,12 +16,15 @@ import il.massive.gea_rent.data.toko.DataToko
 import il.massive.gea_rent.databinding.FragmentBerandaBinding
 import il.massive.gea_rent.model.BarangModel
 import il.massive.gea_rent.model.TokoModel
+import il.massive.gea_rent.viewmodels.UserViewModel
 import il.massive.gea_rent.views.toko_saya.DetailBarangActivity
 import il.massive.gea_rent.views.toko_saya.DetailTokoActivity
 
 
 class BerandaFragment : Fragment() {
     private var _binding: FragmentBerandaBinding? = null
+    private val userViewModel: UserViewModel by viewModels()
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -45,8 +50,9 @@ class BerandaFragment : Fragment() {
         binding.lyBerandaTerdekat.setOnClickListener {
             startActivity(Intent(requireContext(), TokoTerdekatActivity::class.java))
         }
-
-
+        //membuat sapaan untuk user login
+        val name = arguments?.getString("name")
+        binding.sapaan.text = resources.getString(R.string.sapaan, name)
     }
     private val tokoAdapter by lazy {
         val items = DataToko.dummyTokoData

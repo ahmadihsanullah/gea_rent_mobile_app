@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class UserResponse(
+data class UserLoginResponse(
 
 	@field:SerializedName("data")
-	val data: DataUserRegister? = null
+	val data: DataUserLogin? = null
 ) : Parcelable

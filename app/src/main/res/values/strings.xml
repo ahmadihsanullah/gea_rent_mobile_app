@@ -3,5 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="daftar">Daftar</string>
-    <string name="sapaan">Halo, Irma</string>
+    <string name="sapaan">Halo, %1$s</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="mau_sewa_alat_outdoor">Mau sewa alat Outdoor ?</string>
+    <string name="terdekat">Terdekat</string>
+    <string name="barang_terlengkap">Barang Terlengkap</string>
 </resources>

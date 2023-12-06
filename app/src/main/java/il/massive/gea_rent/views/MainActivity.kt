@@ -1,7 +1,7 @@
 package il.massive.gea_rent.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import il.massive.gea_rent.R
@@ -17,8 +17,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadFragment(BerandaFragment()).run {
+        // Retrieve the "name" value from the intent
+        val name = intent.getStringExtra("name")
+        // Load the BerandaFragment and pass the "name" value
+        val berandaFragment = BerandaFragment()
+
+        loadFragment(berandaFragment).run {
             setTitles("Beranda","","")
+            val bundle = Bundle().apply {
+                putString("name", name)
+            }
+            berandaFragment.arguments = bundle
         }
 
         binding.bottomNav.setOnNavigationItemSelectedListener { item ->

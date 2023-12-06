@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
         val password = binding!!.etPassword.text.toString()
         val konfirmasiPassword = binding!!.etConfirmPassword.text.toString()
         if (username.isEmpty() || name.isEmpty() || password.isEmpty() || konfirmasiPassword.isEmpty()) {
-            Toast.makeText(this, "Semua kolom harus diisi", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Semua data harus diisi", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -87,6 +87,11 @@ class RegisterActivity : AppCompatActivity() {
     }
     private fun hideLoading() {
         binding!!.loading.hide()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }
