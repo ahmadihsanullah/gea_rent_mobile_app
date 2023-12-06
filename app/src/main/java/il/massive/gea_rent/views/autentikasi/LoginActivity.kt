@@ -8,6 +8,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import il.massive.gea_rent.api.RequestState
 import il.massive.gea_rent.databinding.ActivityLoginBinding
+import il.massive.gea_rent.helper.Constant
+import il.massive.gea_rent.helper.SharedPrefrencesHelper
 import il.massive.gea_rent.viewmodels.UserViewModel
 import il.massive.gea_rent.views.MainActivity
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -17,6 +19,7 @@ import org.json.JSONObject
 class LoginActivity : AppCompatActivity() {
     private  var _binding : ActivityLoginBinding? = null
     private val userViewModel: UserViewModel by viewModels()
+    lateinit var sharedPreferencesHelper: SharedPrefrencesHelper
     private val binding get()= _binding
 
 
@@ -25,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+        sharedPreferencesHelper = SharedPrefrencesHelper(this)
         hideLoading()
         binding!!.btnLogin.setOnClickListener {
             loginUser()
@@ -39,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
+        //create request to server
         val requestBody = JSONObject().apply {
             put("username", username)
             put("password", password)
@@ -53,17 +58,16 @@ class LoginActivity : AppCompatActivity() {
                         when (userState) {
                             is RequestState.success -> {
                                 hideLoading()
+                                //save to sharedpreferences
+                                saveUSer(state.data.data?.token!!, userState.data.data?.name!!)
                                 // User is logged in, navigate to MainActivity
-                                startActivity(Intent(this@LoginActivity, MainActivity::class.java)
-                                    .putExtra("name", userState.data.data?.name))
+                                moveIntent()
                             }
                             is RequestState.loading -> {
-                                // Handle loading if needed
                                 showLoading()
                             }
                             is RequestState.error -> {
                                 hideLoading()
-                                // Handle error if needed
                                 Log.e("UserCurrent Error", "User tidak diketahui: ${userState.message}")
                                 Toast.makeText(this, "error: ${userState.message}", Toast.LENGTH_SHORT).show()
                             }
@@ -84,6 +88,24 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun hideLoading() {
         binding!!.loading.hide()
+    }
+
+    fun saveUSer(token: String, name:String){
+        sharedPreferencesHelper.put(Constant.PREF_IS_LOGIN, true)
+        sharedPreferencesHelper.put(Constant.PREF_IS_TOKEN, token)
+        sharedPreferencesHelper.put(Constant.PREF_IS_NAME, name)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(sharedPreferencesHelper.getBoolean(Constant.PREF_IS_LOGIN)){
+            moveIntent()
+        }
+    }
+
+    fun moveIntent(){
+        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        finish()
     }
     override fun onDestroy() {
         super.onDestroy()
