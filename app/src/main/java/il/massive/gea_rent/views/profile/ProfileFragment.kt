@@ -40,7 +40,7 @@ class ProfileFragment : Fragment() {
         }
 
         btndetailprofil.setOnClickListener {
-            val intent = Intent(activity, DetailProfileActivity::class.java)
+            val intent = Intent(activity, UpdateProfileActivity::class.java)
             startActivity(intent)
         }
 
