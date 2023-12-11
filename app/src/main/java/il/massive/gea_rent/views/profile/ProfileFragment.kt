@@ -44,8 +44,10 @@ class ProfileFragment : Fragment() {
             val intent = Intent(requireContext(), TokoSayaActivity::class.java)
             startActivity(intent)
         }
+
         binding!!.detailProfile.setOnClickListener {
-            val intent = Intent(requireContext(), DetailProfileActivity::class.java)
+            val intent = Intent(requireContext(), UpdateProfileActivity::class.java)
+
             startActivity(intent)
         }
         binding!!.keluar.setOnClickListener {
