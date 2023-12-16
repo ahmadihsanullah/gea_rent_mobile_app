@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".views.profile.UpdateProfileActivity">
 
     <LinearLayout
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_namaProfile" />
 
     <TextView
-        android:id="@+id/text_emailProfile"
+        android:id="@+id/text_passwordProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -106,22 +106,22 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bg_edittext"
-        android:hint="Email"
+        android:hint="Password"
         android:padding="12dp"
         android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/text_emailProfile"
-        app:layout_constraintTop_toBottomOf="@+id/text_emailProfile" />
+        app:layout_constraintStart_toStartOf="@+id/text_passwordProfile"
+        app:layout_constraintTop_toBottomOf="@+id/text_passwordProfile" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSimpanProfile"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
         android:text="Simpan"
         android:textColor="@color/white"
         android:background="@drawable/btn_inline"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
+        android:layout_marginBottom="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editemailProfile" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

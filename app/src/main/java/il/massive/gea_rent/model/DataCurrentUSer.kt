@@ -1,15 +1,15 @@
 package il.massive.gea_rent.model
 
-import kotlinx.parcelize.Parcelize
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class DataGetCurrentUSer(
+data class DataCurrentUSer(
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
 	@field:SerializedName("username")
-	val username: String? = null
+	val username: String
 ) : Parcelable

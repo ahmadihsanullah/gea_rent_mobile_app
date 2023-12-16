@@ -35,6 +35,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding!!.namaProfile.text = sharedPreferencesHelper.getString(Constant.PREF_IS_NAME).toString()
         hideLoading()
         binding!!.bukatoko.setOnClickListener {
             val intent = Intent(requireContext(), DaftarTokoActivity::class.java)

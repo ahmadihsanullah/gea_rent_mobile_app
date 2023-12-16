@@ -49,38 +49,44 @@ class LoginActivity : AppCompatActivity() {
             put("password", password)
         }.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
-        userViewModel.userLogin(requestBody).observe(this){state->
-            when(state){
-                is RequestState.success -> {
-                    hideLoading()
-                    // Fetch current user after successful login
-                    userViewModel.getCurrentUser("${state.data.data?.token}").observe(this) { userState ->
-                        when (userState) {
-                            is RequestState.success -> {
-                                hideLoading()
-                                //save to sharedpreferences
-                                saveUSer(state.data.data?.token!!, userState.data.data?.name!!)
-                                // User is logged in, navigate to MainActivity
-                                moveIntent()
-                            }
-                            is RequestState.loading -> {
-                                showLoading()
-                            }
-                            is RequestState.error -> {
-                                hideLoading()
-                                Log.e("UserCurrent Error", "User tidak diketahui: ${userState.message}")
-                                Toast.makeText(this, "error: ${userState.message}", Toast.LENGTH_SHORT).show()
-                            }
+        userViewModel.userLogin(requestBody).observe(this){
+               when (it) {
+                    is RequestState.success -> {
+                        hideLoading()
+                        // Fetch current user after successful login
+                        val token = it.data.token
+                        Log.i("token nya nih: ", "${token}")
+                           userViewModel.getCurrentUser(token).observe(this) { userState ->
+                                when (userState) {
+                                    is RequestState.success -> {
+                                        hideLoading()
+                                        //save to sharedpreferences
+                                        saveUSer(token, userState.data.data.name)
+                                        // User is logged in, navigate to MainActivity
+                                        moveIntent()
+                                    }
+                                    is RequestState.loading -> {
+                                        showLoading()
+                                    }
+                                    is RequestState.error -> {
+                                        hideLoading()
+                                        Log.e("UserCurrent Error", "User tidak diketahui: ${userState.message}")
+                                        Toast.makeText(this, "error: ${userState.message}", Toast.LENGTH_SHORT).show()
+                                    }
+                                    else ->{}
+                                }
                         }
                     }
+
+                    is RequestState.loading -> showLoading()
+                    is RequestState.error -> {
+                        hideLoading()
+                        Log.e("Register Error", "Failed to login user. Response: ${it.message}")
+                        Toast.makeText(this, "error: ${it.message}", Toast.LENGTH_SHORT).show()
+                    }
+
+                    else -> {}
                 }
-                is RequestState.loading -> showLoading()
-                is RequestState.error ->{
-                    hideLoading()
-                    Log.e("Register Error", "Failed to login user. Response: ${state.message}")
-                    Toast.makeText(this, "error: ${state.message}", Toast.LENGTH_SHORT).show()
-                }
-            }
         }
     }
     private fun showLoading() {

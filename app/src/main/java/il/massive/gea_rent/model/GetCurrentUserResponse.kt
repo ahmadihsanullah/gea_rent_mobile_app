@@ -8,5 +8,5 @@ import com.google.gson.annotations.SerializedName
 data class GetCurrentUserResponse(
 
 	@field:SerializedName("data")
-	val data: DataGetCurrentUSer? = null
+	val data: DataCurrentUSer
 ) : Parcelable

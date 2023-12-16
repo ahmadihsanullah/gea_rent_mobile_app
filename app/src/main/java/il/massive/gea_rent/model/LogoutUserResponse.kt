@@ -2,8 +2,8 @@ package il.massive.gea_rent.model
 
 import com.google.gson.annotations.SerializedName
 
-data class UserLogoutResponse(
+data class LogoutUserResponse(
 
 	@field:SerializedName("data")
-	val data: String? = null
+	val data: String
 )
