@@ -37,7 +37,7 @@
             android:textSize="18sp"/>
     </LinearLayout>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile"
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinssemibold"
-        android:text="Email"
+        android:text="Password"
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@id/editnamaProfile" />
 
     <EditText
-        android:id="@+id/editemailProfile"
+        android:id="@+id/editPassword"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
