@@ -8,7 +8,9 @@ import il.massive.gea_rent.model.GetCurrentUserResponse
 import il.massive.gea_rent.model.LogoutUserResponse
 import il.massive.gea_rent.model.UserLoginResponse
 import il.massive.gea_rent.model.UserRegisterResponse
+import il.massive.gea_rent.model.UserUpdateResponse
 import il.massive.gea_rent.repository.UserRepository
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.HttpException
 
@@ -53,6 +55,20 @@ class UserViewModel: ViewModel() {
             emit(RequestState.success(response))
         }catch (e: HttpException){
             emit(RequestState.error("Failed to logout : ${e.response()?.errorBody()?.string()}", ))
+        }
+    }
+
+    fun updateUser(
+        authorization: String,
+        profile: MultipartBody.Part?,
+        requestBody: RequestBody
+    ): LiveData<RequestState<UserUpdateResponse>> = liveData {
+        try {
+            emit(RequestState.loading)
+            val response = repo.updateUser(authorization, profile, requestBody)
+            emit(RequestState.success(response))
+        } catch (e: HttpException) {
+            emit(RequestState.error("Failed to update user: ${e.response()?.errorBody()?.string()}", ))
         }
     }
 
